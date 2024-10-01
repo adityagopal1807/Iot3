@@ -318,47 +318,50 @@
     ];
 
     function loadQuestions() {
-        const quizForm = document.getElementById('quizForm');
-        questions.forEach((q, index) => {
-            const questionElement = document.createElement('div');
-            questionElement.className = 'question';
-            questionElement.innerHTML = `
-                <p>${index + 1}. ${q.question}</p>
-                ${q.options.map((option, i) => `
-                    <label class="answer">
-                        <input type="radio" name="question${index}" value="${i}">
-                        ${option}
-                    </label>
-                `).join('')}
-            `;
-            quizForm.appendChild(questionElement);
-        });
-    }
+    const quizForm = document.getElementById('quizForm');
+    questions.forEach((q, index) => {
+        const questionElement = document.createElement('div');
+        questionElement.className = 'question';
+        questionElement.innerHTML = `
+            <p>${index + 1}. ${q.question}</p>
+            ${q.options.map((option, i) => `
+                <label class="answer">
+                    <input type="radio" name="question${index}" value="${i}">
+                    ${option}
+                </label>
+            `).join('')}
+            <div id="answer${index}" class="answer-feedback"></div>
+        `;
+        quizForm.appendChild(questionElement);
+    });
+}
 
-    function submitQuiz() {
-        let score = 0;
-        const resultElement = document.getElementById('result');
-        resultElement.innerHTML = '';
+function submitQuiz() {
+    let score = 0;
+    const resultElement = document.getElementById('result');
+    resultElement.innerHTML = '';
 
-        questions.forEach((q, index) => {
-            const userAnswer = document.querySelector(`input[name="question${index}"]:checked`);
-            if (userAnswer) {
-                const selectedAnswer = parseInt(userAnswer.value);
-                if (selectedAnswer === q.answer) {
-                    score++;
-                    resultElement.innerHTML += `<div class="correct">Q${index + 1}: Correct! (${q.options[q.answer]})</div>`;
-                } else {
-                    resultElement.innerHTML += `<div class="incorrect">Q${index + 1}: Incorrect! Correct answer: ${q.options[q.answer]}</div>`;
-                }
+    questions.forEach((q, index) => {
+        const userAnswer = document.querySelector(`input[name="question${index}"]:checked`);
+        const answerFeedbackElement = document.getElementById(`answer${index}`);
+        
+        if (userAnswer) {
+            const selectedAnswer = parseInt(userAnswer.value);
+            if (selectedAnswer === q.answer) {
+                score++;
+                answerFeedbackElement.innerHTML = `<div class="correct">Correct! (${q.options[q.answer]})</div>`;
             } else {
-                resultElement.innerHTML += `<div class="incorrect">Q${index + 1}: No answer! Correct answer: ${q.options[q.answer]}</div>`;
+                answerFeedbackElement.innerHTML = `<div class="incorrect">Incorrect! Correct answer: ${q.options[q.answer]}</div>`;
             }
-        });
+        } else {
+            answerFeedbackElement.innerHTML = `<div class="incorrect">No answer! Correct answer: ${q.options[q.answer]}</div>`;
+        }
+    });
 
-        alert(`Your final score is ${score} out of ${questions.length}.`);
-    }
+    alert(`Your final score is ${score} out of ${questions.length}.`);
+}
 
-    loadQuestions();
+loadQuestions();
 </script>
 
 </body>
