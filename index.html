@@ -90,52 +90,255 @@
             options: ["Voltage drop", "Wire capacitance and inductance", "Signal frequency", "Data packet size"], 
             answer: 1 
         },
-        // Add other questions here in the same format...
-        {
+        { 
+            question: "How many wires are used in an SPI communication bus?", 
+            options: ["2", "4", "5", "6"], 
+            answer: 1 
+        },
+        { 
+            question: "In SPI communication, which signal is responsible for clock synchronization?", 
+            options: ["MISO", "MOSI", "SCLK", "SS"], 
+            answer: 2 
+        },
+        { 
+            question: "What type of system does SPI implement?", 
+            options: ["Single master, single slave", "Multi-master, multi-slave", "Single master, multi-slave", "Peer-to-peer"], 
+            answer: 2 
+        },
+        { 
+            question: "Which of the following devices commonly use SPI?", 
+            options: ["USB flash drives", "Ethernet cables", "SD cards", "Bluetooth speakers"], 
+            answer: 2 
+        },
+        { 
+            question: "What does I2C stand for?", 
+            options: ["Integrated Inter Controller", "Inter Integrated Circuit", "Interconnected Integrated Channels", "Internal Inter-Connection"], 
+            answer: 1 
+        },
+        { 
+            question: "Which two wires are used in I2C communication?", 
+            options: ["TX and RX", "MISO and MOSI", "SCL and SDA", "CTS and RTS"], 
+            answer: 2 
+        },
+        { 
+            question: "Which company originally developed I2C?", 
+            options: ["Intel", "Motorola", "Philips Semiconductors", "IBM"], 
+            answer: 2 
+        },
+        { 
+            question: "What type of communication does I2C follow?", 
+            options: ["Full-duplex", "Half-duplex", "Simplex", "Multiplex"], 
+            answer: 1 
+        },
+        { 
+            question: "What is the typical data rate of USB 2.0?", 
+            options: ["12 Mbps", "480 Mbps", "1.5 Gbps", "5 Gbps"], 
+            answer: 1 
+        },
+        { 
+            question: "Which of the following pins on a USB is responsible for power?", 
+            options: ["Pin 1 (VBUS)", "Pin 2 (D-)", "Pin 3 (D+)", "Pin 4 (GND)"], 
+            answer: 0 
+        },
+        { 
+            question: "Which USB standard supports the highest data transfer rate?", 
+            options: ["USB 2.0", "USB 3.0", "USB 3.2 Generation 2×2", "USB 4"], 
+            answer: 2 
+        },
+        { 
+            question: "In USB, what is a ‘polling principle’?", 
+            options: ["A device constantly sends signals for data transfer.", "The processor checks if I/O devices are ready to send data.", "Devices broadcast data at random intervals.", "Devices must request permission to send data."], 
+            answer: 1 
+        },
+        { 
+            question: "Which frequency range does Bluetooth operate in?", 
+            options: ["1 GHz - 1.5 GHz", "2.4 GHz - 2.485 GHz", "900 MHz - 1 GHz", "5 GHz - 5.5 GHz"], 
+            answer: 1 
+        },
+        { 
+            question: "What is a Bluetooth network called?", 
+            options: ["Scatternet", "Picocell", "Piconet", "Bluemesh"], 
+            answer: 2 
+        },
+        { 
+            question: "How many active secondary nodes can be in a single piconet?", 
+            options: ["5", "7", "10", "15"], 
+            answer: 1 
+        },
+        { 
+            question: "Which topology allows Bluetooth devices to form multiple interconnected piconets?", 
+            options: ["Star topology", "Mesh topology", "Scatternet", "Ring topology"], 
+            answer: 2 
+        },
+        { 
+            question: "What is the maximum data transfer rate of Bluetooth 2.0?", 
+            options: ["1 Mbps", "3 Mbps", "10 Mbps", "20 Mbps"], 
+            answer: 1 
+        },
+        { 
+            question: "What is Zigbee mainly used for?", 
+            options: ["High-speed data transfer", "Controlling and sensing networks", "Streaming audio and video", "Secure communication"], 
+            answer: 1 
+        },
+        { 
+            question: "Zigbee is based on which IEEE standard?", 
+            options: ["802.3", "802.11", "802.15.4", "802.16"], 
+            answer: 2 
+        },
+        { 
+            question: "What is the maximum practical range of a Zigbee network?", 
+            options: ["50 meters", "75 meters", "100 meters", "200 meters"], 
+            answer: 2 
+        },
+        { 
+            question: "Which of the following is NOT a Zigbee device type?", 
+            options: ["Coordinator", "Router", "End device", "Access Point"], 
+            answer: 3 
+        },
+        { 
+            question: "How many channels does Zigbee support in the 2.4 GHz band?", 
+            options: ["10", "16", "27", "32"], 
+            answer: 1 
+        },
+        { 
+            question: "In RS-232 communication, what is the purpose of the RTS and CTS signals?", 
+            options: ["Data transfer", "Error detection", "Flow control", "Voltage regulation"], 
+            answer: 2 
+        },
+        { 
+            question: "Which method is used by Bluetooth to avoid interference with other devices operating on the same frequency band?", 
+            options: ["DSSS", "FHSS", "OFDM", "TDMA"], 
+            answer: 1 
+        },
+        { 
+            question: "In an I2C bus, what happens if two devices attempt to communicate simultaneously?", 
+            options: ["Data collision occurs, and communication is lost.", "The device with the higher priority address takes control.", "The devices synchronize and split communication.", "The communication is terminated immediately."], 
+            answer: 1 
+        },
+        { 
+            question: "What is the maximum data rate of Zigbee?", 
+            options: ["100 kbps", "250 kbps", "500 kbps","1 Mbps"], 
+            answer: 1 
+        },
+        { 
+            question: "What is the minimum number of devices needed to form a Bluetooth piconet?", 
+            options: ["2", "3", "4", "5"], 
+            answer: 0 
+        },
+        { 
+            question: "Which of the following is true about I2C communication?", 
+            options: ["It allows only one master and one slave.", "It allows multiple masters but only one slave at a time.", "It allows multiple masters and multiple slaves.", "It supports only full-duplex communication."], 
+            answer: 2 
+        },
+        { 
+            question: "What is the purpose of DTR (Data Terminal Ready) in RS-232 communication?", 
+            options: ["Indicates that data is ready for transmission", "Manages flow control", "Signals that the terminal is ready to establish a connection", "Indicates data reception"], 
+            answer: 2 
+        },
+        { 
+            question: "What is the maximum cable length supported by USB 2.0 for optimal performance?", 
+            options: ["3 meters", "1 meter", "10 meters", "5 meters"], 
+            answer: 3 
+        },
+        { 
+            question: "In a Zigbee network, which node is responsible for network formation and control?", 
+            options: ["Router", "End device", "Coordinator", "Gateway"], 
+            answer: 2 
+        },
+        { 
+            question: "Which protocol is most suitable for low-power and low-bandwidth IoT applications?", 
+            options: ["Bluetooth", "Zigbee", "USB 3.2", "RS-232"], 
+            answer: 1 
+        },
+        { 
+            question: "Which of the following communication technologies is commonly used in industrial control systems and home automation?", 
+            options: ["USB", "Bluetooth", "Zigbee", "RS-232"], 
+            answer: 2 
+        },
+        { 
+            question: "Which communication protocol would you typically use for connecting peripheral devices like printers and keyboards to a computer?", 
+            options: ["I2C", "Bluetooth", "USB", "Zigbee"], 
+            answer: 2 
+        },
+        { 
+            question: "In I2C communication, which device generates the clock pulses?", 
+            options: ["Slave", "Master", "Both master and slave", "External clock source"], 
+            answer: 1 
+        },
+        { 
+            question: "What is the primary disadvantage of Bluetooth compared to other wireless technologies like Zigbee?", 
+            options: ["High power consumption", "Lower security", "Limited number of devices", "Shorter communication range"], 
+            answer: 3 
+        },
+        { 
+            question: "What happens in I2C communication when two masters try to communicate simultaneously and collision is detected?", 
+            options: ["Both masters stop communication immediately.", "The communication is terminated, and an error is generated.", "The master with the higher priority address continues, and the other backs off.", "Both masters continue to send data, causing data loss."], 
+            answer: 2 
+        },
+        { 
+            question: "How does the Zigbee mesh topology ensure reliability in data transmission?", 
+            options: ["By using a fixed route for each data transmission", "By allowing direct communication between all devices", "By rerouting data in case of a broken link (self-healing)", "By using time-division multiplexing"], 
+            answer: 2 
+        },
+        { 
+            question: "Which of the following best describes the Bluetooth FHSS (Frequency-hopping spread spectrum) technique?", 
+            options: ["Bluetooth devices transmit on multiple frequencies at once.", "Bluetooth devices change frequencies multiple times per second to avoid interference.", "Bluetooth devices synchronize to a single frequency for the duration of the communication.", "Bluetooth devices use a fixed frequency band to reduce interference."], 
+            answer: 1 
+        },
+        { 
+            question: "What is the primary function of the RTS and CTS signals in RS-232 communication?", 
+            options: ["To indicate readiness for data transmission", "To control the timing of data transmission", "To manage flow control between sender and receiver", "To detect and correct errors during transmission"], 
+            answer: 2 
+        },
+        { 
             question: "What is the maximum number of devices theoretically supported by a Zigbee network?", 
             options: ["65,000", "32", "240", "1,000"], 
             answer: 0 
         }
     ];
 
-    function loadQuiz() {
+    function loadQuestions() {
         const quizForm = document.getElementById('quizForm');
         questions.forEach((q, index) => {
-            const questionBlock = document.createElement('div');
-            questionBlock.className = 'question';
-            questionBlock.innerHTML = `<p>${index + 1}. ${q.question}</p>`;
-            q.options.forEach((option, i) => {
-                questionBlock.innerHTML += `
+            const questionElement = document.createElement('div');
+            questionElement.className = 'question';
+            questionElement.innerHTML = `
+                <p>${index + 1}. ${q.question}</p>
+                ${q.options.map((option, i) => `
                     <label class="answer">
-                        <input type="radio" name="question${index}" value="${i}" required>
+                        <input type="radio" name="question${index}" value="${i}">
                         ${option}
-                    </label>`;
-            });
-            questionBlock.innerHTML += '<div class="feedback" id="feedback' + index + '"></div>'; // Feedback div
-            quizForm.appendChild(questionBlock);
+                    </label>
+                `).join('')}
+            `;
+            quizForm.appendChild(questionElement);
         });
     }
 
     function submitQuiz() {
         let score = 0;
+        const resultElement = document.getElementById('result');
+        resultElement.innerHTML = '';
+
         questions.forEach((q, index) => {
-            const selectedAnswer = document.querySelector(`input[name="question${index}"]:checked`);
-            const feedbackDiv = document.getElementById(`feedback${index}`);
-            if (selectedAnswer) {
-                const selectedValue = parseInt(selectedAnswer.value);
-                if (selectedValue === q.answer) {
+            const userAnswer = document.querySelector(`input[name="question${index}"]:checked`);
+            if (userAnswer) {
+                const selectedAnswer = parseInt(userAnswer.value);
+                if (selectedAnswer === q.answer) {
                     score++;
-                    feedbackDiv.innerHTML = `<span class="correct">Correct: ${q.options[q.answer]}</span>`;
+                    resultElement.innerHTML += `<div class="correct">Q${index + 1}: Correct! (${q.options[q.answer]})</div>`;
                 } else {
-                    feedbackDiv.innerHTML = `<span class="incorrect">Incorrect: Correct answer is ${q.options[q.answer]}</span>`;
+                    resultElement.innerHTML += `<div class="incorrect">Q${index + 1}: Incorrect! Correct answer: ${q.options[q.answer]}</div>`;
                 }
+            } else {
+                resultElement.innerHTML += `<div class="incorrect">Q${index + 1}: No answer! Correct answer: ${q.options[q.answer]}</div>`;
             }
         });
-        alert(`Your score: ${score} out of ${questions.length}`);
+
+        alert(`Your final score is ${score} out of ${questions.length}.`);
     }
 
-    // Load the quiz on page load
-    window.onload = loadQuiz;
+    loadQuestions();
 </script>
 
 </body>
