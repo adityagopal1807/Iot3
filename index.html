@@ -3,296 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MCQ Quiz</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to CSS -->
+    <title>Quiz Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .quiz-container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .question {
+            margin: 20px 0;
+        }
+        .answer {
+            display: block;
+            margin: 5px 0;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+        .score {
+            font-size: 1.2em;
+            text-align: center;
+        }
+        .submit-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 
-<h1>To My Queen 👑</h1>
-<form id="quiz-form">
-    <!-- Questions 1 to 50 -->
-    
-    <h2>1. Serial Communication - RS232</h2>
-    <p>Q1. What type of communication is RS-232 designed for?</p>
-    <label><input type="radio" name="q1" value="A"> A. Full-duplex</label><br>
-    <label><input type="radio" name="q1" value="B"> B. Half-duplex</label><br>
-    <label><input type="radio" name="q1" value="C"> C. Simplex</label><br>
-    <label><input type="radio" name="q1" value="D"> D. Quadruplex</label><br>
-
-    <p>Q2. What is the standard maximum speed of RS-232 communication?</p>
-    <label><input type="radio" name="q2" value="A"> A. 9600 bps</label><br>
-    <label><input type="radio" name="q2" value="B"> B. 115200 bps</label><br>
-    <label><input type="radio" name="q2" value="C"> C. 20 kbps</label><br>
-    <label><input type="radio" name="q2" value="D"> D. 480 Mbps</label><br>
-
-    <p>Q3. Which RS-232 pin is used for transmitting data?</p>
-    <label><input type="radio" name="q3" value="A"> A. RX</label><br>
-    <label><input type="radio" name="q3" value="B"> B. TX</label><br>
-    <label><input type="radio" name="q3" value="C"> C. DTR</label><br>
-    <label><input type="radio" name="q3" value="D"> D. CTS</label><br>
-
-    <p>Q4. Which of the following is NOT an RS-232 control signal?</p>
-    <label><input type="radio" name="q4" value="A"> A. RTS</label><br>
-    <label><input type="radio" name="q4" value="B"> B. CTS</label><br>
-    <label><input type="radio" name="q4" value="C"> C. VCC</label><br>
-    <label><input type="radio" name="q4" value="D"> D. DSR</label><br>
-
-    <p>Q5. What limits the maximum length of an RS-232 cable?</p>
-    <label><input type="radio" name="q5" value="A"> A. Voltage drop</label><br>
-    <label><input type="radio" name="q5" value="B"> B. Wire capacitance and inductance</label><br>
-    <label><input type="radio" name="q5" value="C"> C. Signal frequency</label><br>
-    <label><input type="radio" name="q5" value="D"> D. Data packet size</label><br>
-
-    <h2>2. Serial Peripheral Interface (SPI)</h2>
-    <p>Q6. How many wires are used in an SPI communication bus?</p>
-    <label><input type="radio" name="q6" value="A"> A. 2</label><br>
-    <label><input type="radio" name="q6" value="B"> B. 4</label><br>
-    <label><input type="radio" name="q6" value="C"> C. 5</label><br>
-    <label><input type="radio" name="q6" value="D"> D. 6</label><br>
-
-    <p>Q7. In SPI communication, which signal is responsible for clock synchronization?</p>
-    <label><input type="radio" name="q7" value="A"> A. MISO</label><br>
-    <label><input type="radio" name="q7" value="B"> B. MOSI</label><br>
-    <label><input type="radio" name="q7" value="C"> C. SCLK</label><br>
-    <label><input type="radio" name="q7" value="D"> D. SS</label><br>
-
-    <p>Q8. What type of system does SPI implement?</p>
-    <label><input type="radio" name="q8" value="A"> A. Single master, single slave</label><br>
-    <label><input type="radio" name="q8" value="B"> B. Multi-master, multi-slave</label><br>
-    <label><input type="radio" name="q8" value="C"> C. Single master, multi-slave</label><br>
-    <label><input type="radio" name="q8" value="D"> D. Peer-to-peer</label><br>
-
-    <p>Q9. Which of the following devices commonly use SPI?</p>
-    <label><input type="radio" name="q9" value="A"> A. USB flash drives</label><br>
-    <label><input type="radio" name="q9" value="B"> B. Ethernet cables</label><br>
-    <label><input type="radio" name="q9" value="C"> C. SD cards</label><br>
-    <label><input type="radio" name="q9" value="D"> D. Bluetooth speakers</label><br>
-
-    <h2>3. I2C (Inter-Integrated Circuit)</h2>
-    <p>Q10. What does I2C stand for?</p>
-    <label><input type="radio" name="q10" value="A"> A. Integrated Inter Controller</label><br>
-    <label><input type="radio" name="q10" value="B"> B. Inter Integrated Circuit</label><br>
-    <label><input type="radio" name="q10" value="C"> C. Interconnected Integrated Channels</label><br>
-    <label><input type="radio" name="q10" value="D"> D. Internal Inter-Connection</label><br>
-
-    <p>Q11. Which two wires are used in I2C communication?</p>
-    <label><input type="radio" name="q11" value="A"> A. TX and RX</label><br>
-    <label><input type="radio" name="q11" value="B"> B. MISO and MOSI</label><br>
-    <label><input type="radio" name="q11" value="C"> C. SCL and SDA</label><br>
-    <label><input type="radio" name="q11" value="D"> D. CTS and RTS</label><br>
-
-    <p>Q12. Which company originally developed I2C?</p>
-    <label><input type="radio" name="q12" value="A"> A. Intel</label><br>
-    <label><input type="radio" name="q12" value="B"> B. Motorola</label><br>
-    <label><input type="radio" name="q12" value="C"> C. Philips Semiconductors</label><br>
-    <label><input type="radio" name="q12" value="D"> D. IBM</label><br>
-
-    <p>Q13. What type of communication does I2C follow?</p>
-    <label><input type="radio" name="q13" value="A"> A. Full-duplex</label><br>
-    <label><input type="radio" name="q13" value="B"> B. Half-duplex</label><br>
-    <label><input type="radio" name="q13" value="C"> C. Simplex</label><br>
-    <label><input type="radio" name="q13" value="D"> D. Multiplex</label><br>
-
-    <h2>4. USB (Universal Serial Bus)</h2>
-    <p>Q14. What is the typical data rate of USB 2.0?</p>
-    <label><input type="radio" name="q14" value="A"> A. 12 Mbps</label><br>
-    <label><input type="radio" name="q14" value="B"> B. 480 Mbps</label><br>
-    <label><input type="radio" name="q14" value="C"> C. 1.5 Gbps</label><br>
-    <label><input type="radio" name="q14" value="D"> D. 5 Gbps</label><br>
-
-    <p>Q15. Which USB version introduced the USB Type-C connector?</p>
-    <label><input type="radio" name="q15" value="A"> A. USB 1.0</label><br>
-    <label><input type="radio" name="q15" value="B"> B. USB 2.0</label><br>
-    <label><input type="radio" name="q15" value="C"> C. USB 3.0</label><br>
-    <label><input type="radio" name="q15" value="D"> D. USB 3.1</label><br>
-
-    <p>Q16. What is the primary function of USB hubs?</p>
-    <label><input type="radio" name="q16" value="A"> A. To increase data rates</label><br>
-    <label><input type="radio" name="q16" value="B"> B. To connect multiple devices to a single USB port</label><br>
-    <label><input type="radio" name="q16" value="C"> C. To convert data formats</label><br>
-    <label><input type="radio" name="q16" value="D"> D. To power devices</label><br>
-
-    <p>Q17. Which of the following USB types supports the highest power delivery?</p>
-    <label><input type="radio" name="q17" value="A"> A. USB 2.0</label><br>
-    <label><input type="radio" name="q17" value="B"> B. USB 3.0</label><br>
-    <label><input type="radio" name="q17" value="C"> C. USB 3.1</label><br>
-    <label><input type="radio" name="q17" value="D"> D. USB 3.2</label><br>
-
-    <h2>5. Bluetooth Technology</h2>
-    <p>Q18. What is the main purpose of Bluetooth technology?</p>
-    <label><input type="radio" name="q18" value="A"> A. High-speed internet access</label><br>
-    <label><input type="radio" name="q18" value="B"> B. Wireless data transfer over short distances</label><br>
-    <label><input type="radio" name="q18" value="C"> C. Connecting to satellite systems</label><br>
-    <label><input type="radio" name="q18" value="D"> D. Long-distance communication</label><br>
-
-    <p>Q19. Which Bluetooth version introduced support for low-energy devices?</p>
-    <label><input type="radio" name="q19" value="A"> A. Bluetooth 2.0</label><br>
-    <label><input type="radio" name="q19" value="B"> B. Bluetooth 3.0</label><br>
-    <label><input type="radio" name="q19" value="C"> C. Bluetooth 4.0</label><br>
-    <label><input type="radio" name="q19" value="D"> D. Bluetooth 5.0</label><br>
-
-    <p>Q20. What is the typical range of Bluetooth communication?</p>
-    <label><input type="radio" name="q20" value="A"> A. 10 meters</label><br>
-    <label><input type="radio" name="q20" value="B"> B. 30 meters</label><br>
-    <label><input type="radio" name="q20" value="C"> C. 100 meters</label><br>
-    <label><input type="radio" name="q20" value="D"> D. 200 meters</label><br>
-
-    <h2>6. Zigbee Technology</h2>
-    <p>Q21. What is the primary application of Zigbee technology?</p>
-    <label><input type="radio" name="q21" value="A"> A. High-speed internet access</label><br>
-    <label><input type="radio" name="q21" value="B"> B. Short-range, low-power wireless communication</label><br>
-    <label><input type="radio" name="q21" value="C"> C. Long-distance communication</label><br>
-    <label><input type="radio" name="q21" value="D"> D. Optical communication</label><br>
-
-    <p>Q22. Which protocol does Zigbee use for networking?</p>
-    <label><input type="radio" name="q22" value="A"> A. TCP/IP</label><br>
-    <label><input type="radio" name="q22" value="B"> B. Zigbee Pro</label><br>
-    <label><input type="radio" name="q22" value="C"> C. HTTP</label><br>
-    <label><input type="radio" name="q22" value="D"> D. FTP</label><br>
-
-    <p>Q23. How many devices can be connected in a Zigbee network?</p>
-    <label><input type="radio" name="q23" value="A"> A. 100</label><br>
-    <label><input type="radio" name="q23" value="B"> A. 65,000</label><br>
-    <label><input type="radio" name="q23" value="C"> A. 256</label><br>
-    <label><input type="radio" name="q23" value="D"> A. 32</label><br>
-
-    <p>Q24. What is the typical data rate for Zigbee?</p>
-    <label><input type="radio" name="q24" value="A"> A. 10 kbps</label><br>
-    <label><input type="radio" name="q24" value="B"> B. 100 kbps</label><br>
-    <label><input type="radio" name="q24" value="C"> C. 250 kbps</label><br>
-    <label><input type="radio" name="q24" value="D"> D. 1 Mbps</label><br>
-
-    <h2>7. Medium-Level Questions</h2>
-    <p>Q36. What is the minimum number of devices needed to form a Bluetooth piconet?</p>
-    <label><input type="radio" name="q36" value="A"> A. 2</label><br>
-    <label><input type="radio" name="q36" value="B"> B. 3</label><br>
-    <label><input type="radio" name="q36" value="C"> C. 4</label><br>
-    <label><input type="radio" name="q36" value="D"> D. 5</label><br>
-
-    <p>Q37. Which of the following is true about I2C communication?</p>
-    <label><input type="radio" name="q37" value="A"> A. It allows only one master and one slave.</label><br>
-    <label><input type="radio" name="q37" value="B"> B. It allows multiple masters but only one slave at a time.</label><br>
-    <label><input type="radio" name="q37" value="C"> C. It allows multiple masters and multiple slaves.</label><br>
-    <label><input type="radio" name="q37" value="D"> D. It supports only full-duplex communication.</label><br>
-
-    <p>Q38. What is the purpose of DTR (Data Terminal Ready) in RS-232 communication?</p>
-    <label><input type="radio" name="q38" value="A"> A. Indicates that data is ready for transmission</label><br>
-    <label><input type="radio" name="q38" value="B"> B. Manages flow control</label><br>
-    <label><input type="radio" name="q38" value="C"> C. Signals that the terminal is ready to establish a connection</label><br>
-    <label><input type="radio" name="q38" value="D"> D. Indicates data reception</label><br>
-
-    <p>Q39. What is the maximum cable length supported by USB 2.0 for optimal performance?</p>
-    <label><input type="radio" name="q39" value="A"> A. 3 meters</label><br>
-    <label><input type="radio" name="q39" value="B"> B. 5 meters</label><br>
-    <label><input type="radio" name="q39" value="C"> C. 10 meters</label><br>
-    <label><input type="radio" name="q39" value="D"> D. 15 meters</label><br>
-
-    <p>Q40. What is the function of the SS (Slave Select) pin in SPI communication?</p>
-    <label><input type="radio" name="q40" value="A"> A. To control data flow</label><br>
-    <label><input type="radio" name="q40" value="B"> B. To select the active slave device</label><br>
-    <label><input type="radio" name="q40" value="C"> C. To provide the clock signal</label><br>
-    <label><input type="radio" name="q40" value="D"> B. To acknowledge data reception</label><br>
-
-    <h2>8. Additional Questions</h2>
-    <p>Q41. In which application is I2C primarily used?</p>
-    <label><input type="radio" name="q41" value="A"> A. High-speed communication</label><br>
-    <label><input type="radio" name="q41" value="B"> B. Low-speed, short-distance communication</label><br>
-    <label><input type="radio" name="q41" value="C"> C. Long-distance wireless communication</label><br>
-    <label><input type="radio" name="q41" value="D"> D. Optical data transmission</label><br>
-
-    <p>Q42. Which type of signal does the Bluetooth LE (Low Energy) protocol primarily utilize?</p>
-    <label><input type="radio" name="q42" value="A"> A. Continuous wave</label><br>
-    <label><input type="radio" name="q42" value="B"> B. Frequency-hopping spread spectrum</label><br>
-    <label><input type="radio" name="q42" value="C"> C. Infrared</label><br>
-    <label><input type="radio" name="q42" value="D"> D. Simplex</label><br>
-
-    <p>Q43. In Zigbee, what is the typical range of communication?</p>
-    <label><input type="radio" name="q43" value="A"> A. 10 meters</label><br>
-    <label><input type="radio" name="q43" value="B"> B. 100 meters</label><br>
-    <label><input type="radio" name="q43" value="C"> C. 300 meters</label><br>
-    <label><input type="radio" name="q43" value="D"> D. 1 km</label><br>
-
-    <p>Q44. What is the purpose of the RTS (Request to Send) signal in RS-232?</p>
-    <label><input type="radio" name="q44" value="A"> A. To indicate data has been received</label><br>
-    <label><input type="radio" name="q44" value="B"> B. To request permission to send data</label><br>
-    <label><input type="radio" name="q44" value="C"> C. To terminate the connection</label><br>
-    <label><input type="radio" name="q44" value="D"> D. To establish a connection</label><br>
-
-    <p>Q45. Which of the following best describes a master-slave relationship in I2C?</p>
-    <label><input type="radio" name="q45" value="A"> A. One device controls multiple devices</label><br>
-    <label><input type="radio" name="q45" value="B"> B. Multiple devices control one device</label><br>
-    <label><input type="radio" name="q45" value="C"> C. All devices have equal control</label><br>
-    <label><input type="radio" name="q45" value="D"> D. Devices do not communicate</label><br>
-
-    <p>Q46. Which of the following USB standards supports data transfer rates of up to 10 Gbps?</p>
-    <label><input type="radio" name="q46" value="A"> A. USB 2.0</label><br>
-    <label><input type="radio" name="q46" value="B"> B. USB 3.0</label><br>
-    <label><input type="radio" name="q46" value="C"> C. USB 3.1</label><br>
-    <label><input type="radio" name="q46" value="D"> D. USB 3.2</label><br>
-
-    <p>Q47. What is the main advantage of using SPI over I2C?</p>
-    <label><input type="radio" name="q47" value="A"> A. Simplicity</label><br>
-    <label><input type="radio" name="q47" value="B"> B. Higher data rates</label><br>
-    <label><input type="radio" name="q47" value="C"> C. Longer range</label><br>
-    <label><input type="radio" name="q47" value="D"> D. Lower power consumption</label><br>
-
-    <p>Q48. In Bluetooth communication, which device acts as the master?</p>
-    <label><input type="radio" name="q48" value="A"> A. The device that sends data</label><br>
-    <label><input type="radio" name="q48" value="B"> B. The device that receives data</label><br>
-    <label><input type="radio" name="q48" value="C"> C. The device that initiates the connection</label><br>
-    <label><input type="radio" name="q48" value="D"> D. Any device in the piconet</label><br>
-
-    <p>Q49. What is the function of the clock signal in SPI?</p>
-    <label><input type="radio" name="q49" value="A"> A. To synchronize data transmission</label><br>
-    <label><input type="radio" name="q49" value="B"> B. To provide power to the devices</label><br>
-    <label><input type="radio" name="q49" value="C"> C. To encode the data</label><br>
-    <label><input type="radio" name="q49" value="D"> D. To manage device connections</label><br>
-
-    <p>Q50. Which wireless technology is best suited for IoT applications?</p>
-    <label><input type="radio" name="q50" value="A"> A. Zigbee</label><br>
-    <label><input type="radio" name="q50" value="B"> B. Bluetooth</label><br>
-    <label><input type="radio" name="q50" value="C"> C. Wi-Fi</label><br>
-    <label><input type="radio" name="q50" value="D"> D. RS-232</label><br>
-
-    <button onclick="checkAnswers()">Submit Quiz</button>
-</form>
-<div id="quote" style="display: none;"></div>
-<div id="result" style="display:none;"></div>
+<div class="quiz-container">
+    <h1>Quiz</h1>
+    <form id="quizForm">
+        <!-- Questions will be injected here -->
+    </form>
+    <button class="submit-button" onclick="submitQuiz()">Submit</button>
+    <div id="result"></div>
+</div>
 
 <script>
-    function checkAnswers() {
-const correctAnswers = {
-        q1: 'A', q2: 'B', q3: 'B', q4: 'C', q5: 'B',
-        q6: 'B', q7: 'C', q8: 'C', q9: 'C', q10: 'B',
-        q11: 'C', q12: 'C', q13: 'B', q14: 'B', q15: 'D',
-        q16: 'B', q17: 'C', q18: 'B', q19: 'A', q20: 'B',
-        q21: 'B', q22: 'B', q23: 'B', q24: 'C', q36: 'A',
-        q37: 'B', q38: 'C', q39: 'B', q40: 'B', q41: 'B',
-        q42: 'B', q43: 'B', q44: 'B', q45: 'A', q46: 'C',
-        q47: 'B', q48: 'C', q49: 'A', q50: 'A'
-    };
-
-        let score = 0;
-        for (let question in answers) {
-            const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
-            const answerDiv = document.getElementById(`answer${question.slice(1)}`);
-            if (selectedOption && selectedOption.value === answers[question]) {
-                score++;
-                answerDiv.innerText = `Correct! The answer is ${answers[question]}`;
-                answerDiv.style.color = "green";
-            } else {
-                answerDiv.innerText = `Incorrect! The correct answer is ${answers[question]}`;
-                answerDiv.style.color = "red";
-            }
+    const questions = [
+        { 
+            question: "What type of communication is RS-232 designed for?", 
+            options: ["Full-duplex", "Half-duplex", "Simplex", "Quadruplex"], 
+            answer: 0 
+        },
+        { 
+            question: "What is the standard maximum speed of RS-232 communication?", 
+            options: ["9600 bps", "115200 bps", "20 kbps", "480 Mbps"], 
+            answer: 2 
+        },
+        { 
+            question: "Which RS-232 pin is used for transmitting data?", 
+            options: ["RX", "TX", "DTR", "CTS"], 
+            answer: 1 
+        },
+        { 
+            question: "Which of the following is NOT an RS-232 control signal?", 
+            options: ["RTS", "CTS", "VCC", "DSR"], 
+            answer: 2 
+        },
+        { 
+            question: "What limits the maximum length of an RS-232 cable?", 
+            options: ["Voltage drop", "Wire capacitance and inductance", "Signal frequency", "Data packet size"], 
+            answer: 1 
+        },
+        // Add other questions here in the same format...
+        {
+            question: "What is the maximum number of devices theoretically supported by a Zigbee network?", 
+            options: ["65,000", "32", "240", "1,000"], 
+            answer: 0 
         }
+    ];
 
-        alert(`Your score is ${score} out of ${Object.keys(answers).length}`);
-
-        // Display the quote after submission
-        document.getElementById('quote').innerText = "You are My Queen!";
-        document.getElementById('quote').style.display = 'block'; // Ensure it's displayed
+    function loadQuiz() {
+        const quizForm = document.getElementById('quizForm');
+        questions.forEach((q, index) => {
+            const questionBlock = document.createElement('div');
+            questionBlock.className = 'question';
+            questionBlock.innerHTML = `<p>${index + 1}. ${q.question}</p>`;
+            q.options.forEach((option, i) => {
+                questionBlock.innerHTML += `
+                    <label class="answer">
+                        <input type="radio" name="question${index}" value="${i}" required>
+                        ${option}
+                    </label>`;
+            });
+            quizForm.appendChild(questionBlock);
+        });
     }
-    </script>
+
+    function submitQuiz() {
+        let score = 0;
+        let resultHtml = '';
+        questions.forEach((q, index) => {
+            const selectedAnswer = document.querySelector(`input[name="question${index}"]:checked`);
+            if (selectedAnswer) {
+                const selectedValue = parseInt(selectedAnswer.value);
+                if (selectedValue === q.answer) {
+                    score++;
+                    resultHtml += `<p class="correct">${q.question} - Correct</p>`;
+                } else {
+                    resultHtml += `<p class="incorrect">${q.question} - Incorrect (Correct answer: ${q.options[q.answer]})</p>`;
+                }
+            }
+        });
+        resultHtml += `<div class="score">Your score: ${score} out of ${questions.length}</div>`;
+        document.getElementById('result').innerHTML = resultHtml;
+    }
+
+    // Load the quiz on page load
+    window.onload = loadQuiz;
+</script>
 
 </body>
 </html>
