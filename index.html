@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Website</title>
+    <title>Enhancing Your Confidence👑</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -59,7 +59,7 @@
     <form id="quizForm">
         <!-- Questions will be injected here -->
     </form>
-    <button class="submit-button" onclick="submitQuiz()">Submit</button>
+    <button class="submit-button" onclick="submitQuiz()">I Love You❤️</button>
     <div id="result"></div>
 </div>
 
@@ -349,16 +349,16 @@ function submitQuiz() {
             const selectedAnswer = parseInt(userAnswer.value);
             if (selectedAnswer === q.answer) {
                 score++;
-                answerFeedbackElement.innerHTML = `<div class="correct">Correct! (${q.options[q.answer]})</div>`;
+                answerFeedbackElement.innerHTML = `<div class="correct">You got it Queen💛!(${q.options[q.answer]})</div>`;
             } else {
-                answerFeedbackElement.innerHTML = `<div class="incorrect">Incorrect! Correct answer: ${q.options[q.answer]}</div>`;
+                answerFeedbackElement.innerHTML = `<div class="incorrect">Queen You missed it😫! Correct answer: ${q.options[q.answer]}</div>`;
             }
         } else {
             answerFeedbackElement.innerHTML = `<div class="incorrect">No answer! Correct answer: ${q.options[q.answer]}</div>`;
         }
     });
 
-    alert(`Your final score is ${score} out of ${questions.length}.`);
+    alert(`Good Job Queen👑! Your final score is ${score} out of ${questions.length}.`);
 }
 
 loadQuestions();
