@@ -111,27 +111,27 @@
                         ${option}
                     </label>`;
             });
+            questionBlock.innerHTML += '<div class="feedback" id="feedback' + index + '"></div>'; // Feedback div
             quizForm.appendChild(questionBlock);
         });
     }
 
     function submitQuiz() {
         let score = 0;
-        let resultHtml = '';
         questions.forEach((q, index) => {
             const selectedAnswer = document.querySelector(`input[name="question${index}"]:checked`);
+            const feedbackDiv = document.getElementById(`feedback${index}`);
             if (selectedAnswer) {
                 const selectedValue = parseInt(selectedAnswer.value);
                 if (selectedValue === q.answer) {
                     score++;
-                    resultHtml += `<p class="correct">${q.question} - Correct</p>`;
+                    feedbackDiv.innerHTML = `<span class="correct">Correct: ${q.options[q.answer]}</span>`;
                 } else {
-                    resultHtml += `<p class="incorrect">${q.question} - Incorrect (Correct answer: ${q.options[q.answer]})</p>`;
+                    feedbackDiv.innerHTML = `<span class="incorrect">Incorrect: Correct answer is ${q.options[q.answer]}</span>`;
                 }
             }
         });
-        resultHtml += `<div class="score">Your score: ${score} out of ${questions.length}</div>`;
-        document.getElementById('result').innerHTML = resultHtml;
+        alert(`Your score: ${score} out of ${questions.length}`);
     }
 
     // Load the quiz on page load
