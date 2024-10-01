@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<h1>MCQ Quiz</h1>
+<h1>To My Queen 👑</h1>
 <form id="quiz-form">
     <!-- Questions 1 to 50 -->
     
@@ -256,11 +256,12 @@
 
     <button type="submit">Submit</button>
 </form>
-
+<div id="quote" style="display: none;"></div>
 <div id="result" style="display:none;"></div>
 
 <script>
-    const correctAnswers = {
+    function checkAnswers() {
+const correctAnswers = {
         q1: 'A', q2: 'B', q3: 'B', q4: 'C', q5: 'B',
         q6: 'B', q7: 'C', q8: 'C', q9: 'C', q10: 'B',
         q11: 'C', q12: 'C', q13: 'B', q14: 'B', q15: 'D',
@@ -271,29 +272,27 @@
         q47: 'B', q48: 'C', q49: 'A', q50: 'A'
     };
 
-    const form = document.getElementById('quiz-form');
-    const resultDiv = document.getElementById('result');
-
-    form.addEventListener('submit', function (event) {
-        event.preventDefault();
-
         let score = 0;
-        const totalQuestions = Object.keys(correctAnswers).length;
-
-        for (let i = 1; i <= totalQuestions; i++) {
-            const questionKey = 'q' + i;
-            const selectedAnswer = form[questionKey].value;
-
-            if (selectedAnswer === correctAnswers[questionKey]) {
+        for (let question in answers) {
+            const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
+            const answerDiv = document.getElementById(`answer${question.slice(1)}`);
+            if (selectedOption && selectedOption.value === answers[question]) {
                 score++;
+                answerDiv.innerText = `Correct! The answer is ${answers[question]}`;
+                answerDiv.style.color = "green";
+            } else {
+                answerDiv.innerText = `Incorrect! The correct answer is ${answers[question]}`;
+                answerDiv.style.color = "red";
             }
         }
 
-        // Display the result
-        resultDiv.style.display = 'block';
-        resultDiv.innerHTML = `You scored ${score} out of ${totalQuestions}.`;
-    });
-</script>
+        alert(`Your score is ${score} out of ${Object.keys(answers).length}`);
+
+        // Display the quote after submission
+        document.getElementById('quote').innerText = "You are My Queen!";
+        document.getElementById('quote').style.display = 'block'; // Ensure it's displayed
+    }
+    </script>
 
 </body>
 </html>
